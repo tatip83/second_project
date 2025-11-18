@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+%hover_dark {
+    &:hover {
+        cursor: pointer; 
+        color: v.$color_hover_dark;
+
+    }
+}
+%hover_white {
+    cursor: pointer;
+    color: v.$color_white;
+}
