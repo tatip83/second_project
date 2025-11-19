@@ -47,8 +47,9 @@
             flex-grow: 1;
 
             .list {
-                @include m.d-flex(start, center, nowrap, row, 100px, o);
-                padding: 0 0 0 100px;
+                @include m.d-flex(center, center, nowrap, row, 100px, o);
+                padding: 0 0 0 min(100px, 5vw);
+                margin: 0 25px 0 0;
 
                 &_item {
                     &_link {
@@ -59,6 +60,14 @@
                         @extend %hover_dark;
 
                     }
+                }
+            }
+
+            @media (max-width: v.$media_lg) {
+                .list {
+                    @include m.d-flex(center, center, nowrap, row, 100px, o);
+                    padding: 0 0 0 min(100px, 5vw);
+
                 }
             }
         }
