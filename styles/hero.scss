@@ -1,0 +1,168 @@
+@use 'variables'as v;
+@use 'mixins'as m;
+@use 'placeholder';
+@use 'sass:color';
+
+
+.hero {
+    position: relative;
+    max-width: 1260px;
+    height: 830px;
+    margin: 0 auto;
+    padding: 140px 0 0 0;
+    background: url('../assets/pics/cloud.png') center/contain no-repeat;
+
+    &_content {
+        position: relative;
+        width: 900px;
+        margin: 0 auto;
+
+        .hero_title {
+            @include m.font (75px, 700, v.$color_dark);
+            line-height: 1;
+        }
+
+        .hero_action_btn {
+            width: 270px;
+            height: 50px;
+            background-color: v.$color_dark;
+            border: none;
+            border-radius: 45px;
+            cursor: pointer;
+            @include m.font (20px, 500, v.$color_white);
+            @include m.position(absolute, 1, -1, bottom, right, 15px, 180px);
+
+            &:hover {
+                background-color: color.adjust(v.$color_dark, $alpha: -0.35);
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &:focus-visible {
+                outline: 2px solid v.$color_white;
+            }
+        }
+        @media (max-width: v.$media_lg) {
+            width: 100%;
+            max-width: 700px;
+            height: 500px;
+
+            .hero_title {
+                @include m.font(80px, 700, v.$color_dark);
+            }
+            .hero_action_btn {
+                @include m.position(absolute, 1, -1, bottom, left, 0, 20px);
+            }
+        }
+        @media (max-width: v.$media_sm) {
+            max-width: 300px;
+            height: 300px;
+
+            .hero_title {
+                @include m.font(47px, 500, v.$color_dark);
+            }
+        }
+    }
+    &_notify {
+        position: relative;
+        margin: 100px auto 0;
+        width: 630px;
+        height: 80px;
+        background-color: color.adjust(v.$color_white, $alpha: -0.80);
+        border-radius: 20px;
+        @include m.d-flex(end, center, nowrap, row, 15px);
+
+        &_img {
+            @include m.position(absolute, 1, -1, center, left, -15px, -10px);
+        }
+
+        &_content {
+            width: 470px;
+            height: 100%;
+            @include m.d-flex(center, center, nowrap);
+            @include m.font(15px, 400, v.$color_dark);
+            border-right: 1px solid v.$color_dark;
+            line-height: 1;
+        }
+
+        &_btn {
+            width: 80px;
+            background: none;
+            border: none;
+            @include m.font(15px, 700, v.$color_dark);
+            padding-right: 15px;
+            @extend %hover_light;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:focus-visible {
+                outline: 2px solid v.$color_white;
+                border-radius: 45px;
+            }
+        }
+        @media (max-width: v.$media_md) {
+            width: 100%;
+            max-width: 400px;
+            margin: 85px auto 0;
+            height: fit-content;
+            @include m.d-flex(start, center, nowrap, column, 0, 0);
+
+            &_content {
+                width: 100%;
+                padding: 15px 10px 15px 90px;
+                border-right: none;
+                border-bottom: 1px solid v.$color_white;
+                line-height: 1;
+                @include m.font(20px, 400, v.$color_dark);
+            }   
+            &_btn { 
+                @include m.d-flex(start, center, nowrap, column, 0, 0);
+                @include m.font(30px, 400, v.$color_dark);
+            }
+        }
+        @media (max-width: v.$media_sm) {
+            &_img {
+                @include m.position(absolute, 1, -1, center, left, -15px, -10px);
+            }
+            &_content {
+                padding: 10px 10px 10px 110px;
+                @include m.font(11px, 400, v.$color_dark);
+            }
+        }
+    }
+    &_scroll {
+        @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+
+        &_content {
+            position: relative;
+            @include m.font(15px, 500, v.$color_white);
+            writing-mode: vertical-rl;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                @include m.position(absolute, 1, -1, top, left, 100px, 6px);
+                display: block;
+                width: 1px;
+                height: 75px;
+                background-color: v.$color_white;
+            }
+        }
+        @media (max-width: v.$media_lg) {
+            @include m.position(absolute, 1, -1, top, left, 130px, 10px);
+        }
+        @media (max-width: v.$media_sm) {
+            @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+        }
+    }
+    @media (max-width: v.$media_md) {
+        padding: 110px 15px 0;
+    }
+    @media (max-width: v.$media_sm) {
+        height: 500px;
+    }
+}
