@@ -1,0 +1,30 @@
+@use 'variables'as v;
+@use 'mixins'as m;
+@use "sass:color";
+
+
+.info_card {
+    width: 180px; 
+    height: 200px;
+    margin: 20px;
+    padding: 20px 10px 0;
+    border-radius: 20px;
+    background-color: color.adjust(v.$color_white, $alpha: -0.80);
+    @include m.d-flex(start, center, nowrap, column, 10px);
+
+    &_title {
+        @include m.font(20px, 700, v.$color_dark );
+    }
+    &_desc {
+        text-align: center;
+        @include m.font(15px, 400, v.$color_dark );
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: color.adjust(v.$color_white, $alpha: -0.90);
+
+        .info_card_title, .info_card_desc {
+            color: v.$color_white;
+        }
+    }
+}
