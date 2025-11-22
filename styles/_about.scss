@@ -1,0 +1,73 @@
+@use 'variables'as v;
+@use 'mixins'as m;
+
+
+.about_section {
+    padding: 50px 0 0 0;
+    @include m.d-flex(center, center, nowrap, column, 0, 0);
+
+    .about {
+        margin: 0 auto;
+
+        &_quality {
+            @include m.d-flex(center, center, nowrap, column, px, 50px);
+            @include m.font(20px, 300, v.$color_white);
+            text-align: center;
+
+            &_desc {
+                margin: 0 150px 0px 150px;
+            }
+
+            &_title {
+                @include m.font(55px, 500, v.$color_white);
+            }
+
+            &_pic {
+                @include m.d-flex(center, center, nowrap, column, 0, 0);
+                padding: 25px;
+            }
+        }
+
+        &_touch {
+            padding: 50px 0 0 15px;
+
+            @include m.d-flex(center, center, nowrap, column, 0, 50px);
+            @include m.font(20px, 300, v.$color_white);
+            text-align: center;
+
+            &_desc {
+                margin: 0 150px 0px 150px;
+            }
+
+            &_title {
+                @include m.font(55px, 500, v.$color_white);
+            }
+
+            &_pic {
+                @include m.d-flex(center, center, nowrap, column, 0, 0);
+                padding: 25px;
+            }
+        }
+
+        &_approach {
+            padding: 50px 0 0 15px;
+
+            @include m.d-flex(center, center, nowrap, column, 0, 50px);
+            @include m.font(20px, 300, v.$color_white);
+            text-align: center;
+
+            &_desc {
+                margin: 0 150px 0px 150px;
+            }
+
+            &_title {
+                @include m.font(55px, 500, v.$color_white);
+            }
+
+            &_pic {
+                @include m.d-flex(center, center, nowrap, column, 0, 0);
+                padding: 25px;
+            }
+        }
+    }
+}
