@@ -4,7 +4,7 @@
 
 
 .info_card {
-    width: 180px; 
+    width: 180px;
     height: 200px;
     margin: 20px;
     padding: 20px 10px 0;
@@ -13,18 +13,64 @@
     @include m.d-flex(start, center, nowrap, column, 10px);
 
     &_title {
-        @include m.font(20px, 700, v.$color_dark );
+        @include m.font(20px, 700, v.$color_dark);
     }
+
     &_desc {
         text-align: center;
-        @include m.font(15px, 400, v.$color_dark );
+        @include m.font(15px, 400, v.$color_dark);
     }
+
     &:hover {
         cursor: pointer;
         background-color: color.adjust(v.$color_white, $alpha: -0.90);
 
-        .info_card_title, .info_card_desc {
+        .info_card_title,
+        .info_card_desc {
             color: v.$color_white;
         }
+    }
+}
+
+.img_card {
+    position: relative;
+    width: 260px;
+    height: auto;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: color.adjust(v.$color_white, $alpha: -0.80);
+    @include m.d-flex(space-between, center, nowrap, column, 0, 0);
+    overflow: hidden;
+    box-shadow: inset 1px 1px 26px 8px rgba(0, 0, 0, 0.5);
+
+    &_title {
+        @include m.font(20px, 400, v.$color_white);
+        @include m.d-flex(center, center, nowrap, column, 0, 0);
+    }
+    &_btn {
+        @include m.position(absolute, 1, -1, bottom, left, -5px, -5px);
+        background-color: color.adjust(v.$color_white, $alpha: -0.30);
+
+        width: 60px;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        rotate: z -20deg;
+        transition: rotate .2s;
+
+        &_btn_icon {
+            width: 35px;
+            height: 20px;
+            border-radius: 15px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            rotate: z 3deg;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: v.$color_blue;
     }
 }
