@@ -77,8 +77,10 @@
 .wave_card {
     width: 350px;
     height: 250px;
+    background-color: color.adjust(v.$color_dark, $alpha: -0.85);
     border: 1px solid v.$color_hover_dark;
     border-radius: 30px;
+    @include m.d-flex(start, start,  nowrap, column, 0, 35px);
 
     &_avatar {
         vertical-align: middle;
@@ -88,7 +90,8 @@
         margin: 20px 20px 0 20px;
     }
     &_quote {
-        @include m.font(20px, 400, v.$color_white);
+        @include m.font(20px, 400, v.$color_dark);
+        margin: 0 20px;
         line-height: 1.3;
     }
 }

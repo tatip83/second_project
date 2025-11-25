@@ -2,12 +2,13 @@
 @use 'mixins'as m;
 @use "sass:color";
 
+
 %slider-button {
     width: 65px;
     height: 65px;
     border: none;
     border-radius: 20px;
-    background-color: color.adjust(v.$color_blue, $alpha: -0.80);
+    background-color: color.adjust(v.$color_white, $alpha: -0.80);
     rotate: z 45deg;
 }
 
